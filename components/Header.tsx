@@ -31,7 +31,7 @@ const Header: React.FC<HeaderProps> = ({
           {isEditorVisible ? <SidebarCloseIcon className="h-5 w-5" /> : <SidebarOpenIcon className="h-5 w-5" />}
         </button>
         <div className="flex items-center gap-2">
-           <img src="/favicon.svg" alt="MarkmapLM Logo" className="h-8 w-8" />
+           <img src="icon.svg" alt="MarkmapLM Logo" className="h-8 w-8" />
           <h1 className="text-xl font-bold text-gray-800 dark:text-white">MarkmapLM</h1>
         </div>
       </div>
