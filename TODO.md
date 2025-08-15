@@ -29,6 +29,7 @@ This document tracks the progress of refactoring the Markmap VSCode extension in
 
 - [x] Integrate the Gemini API to provide Markdown correction.
 - [x] Add a "Fix with AI" button to trigger syntax correction.
+- [x] Allow configuring Gemini API Key in settings.
 - [ ] Provide a preview of AI-suggested changes before applying them.
 - [ ] Explore context-aware formatting suggestions.
 - [ ] Research and implement batch error fixing for multiple issues at once.
@@ -38,8 +39,8 @@ This document tracks the progress of refactoring the Markmap VSCode extension in
 
 - [x] **Layout Optimization**: Implemented a resizable splitter and collapsible editor panel.
 - [x] **Custom Icon**: Replaced the default Markmap favicon with a custom application icon.
-- [ ] **Local Image Support**: Replace the VSCode-specific local image plugin with a web-compatible solution (e.g., file upload and Base64 encoding).
-- [ ] **Offline Support**: Investigate and implement Progressive Web App (PWA) capabilities for offline access.
+- [x] **Offline Support**: Investigate and implement Progressive Web App (PWA) capabilities for offline access.
+- [x] **State Management**: Refactored to use Zustand for centralized state management.
+- [x] **Local Image Support**: Added ability to insert local images, which are embedded as Base64 data URLs.
 - [ ] **Accessibility (A11y)**: Conduct a full accessibility audit and add necessary ARIA attributes and keyboard navigation improvements.
-- [ ] **State Management**: For more complex features, evaluate and potentially integrate a dedicated state management library (e.g., Zustand, Redux).
 - [ ] **Testing**: Add unit and integration tests for components and services.

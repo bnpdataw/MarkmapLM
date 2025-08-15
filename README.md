@@ -1,4 +1,4 @@
-# Markmap With AI
+# Markmap Web
 
 An interactive web application to visualize Markdown as a mind map, featuring real-time editing, SVG/HTML export, and AI-powered syntax correction using the Google Gemini API.
 
@@ -15,6 +15,7 @@ This project is a web-based refactor of the original [markmap-vscode](https://gi
   - **Upload**: Open local `.md` or `.markdown` files.
   - **Export to SVG**: Download a static SVG of your current mind map.
   - **Export to HTML**: Download a self-contained, interactive HTML file that can be viewed offline.
+- **Local Image Support**: Insert local images directly into your markdown. They are automatically converted to Base64 and embedded in the document.
 - **Customization**:
   - **Themes**: Switch between light and dark modes.
   - **Markmap Options**: Fine-tune the appearance and behavior of the mind map via a JSON editor.
@@ -24,6 +25,7 @@ This project is a web-based refactor of the original [markmap-vscode](https://gi
 ## 🚀 Technology Stack
 
 - **Frontend**: [React](https://reactjs.org/) & [TypeScript](https://www.typescriptlang.org/)
+- **State Management**: [Zustand](https://github.com/pmndrs/zustand)
 - **Mind Mapping**: [Markmap.js](https://markmap.js.org/) (`markmap-lib`, `markmap-view`, `markmap-toolbar`)
 - **AI Integration**: [Google Gemini API](https://ai.google.dev/) (`@google/genai`)
 - **Layout**: [Allotment](https://github.com/johnsoncodehk/allotment) for the resizable split-pane view.
@@ -72,6 +74,7 @@ The application expects the API key to be available in the `process.env.API_KEY`
 ├── constants.ts        # Shared constants (initial markdown, default options)
 ├── hooks/              # Custom React hooks (useDebounce)
 ├── services/           # Services for external APIs (geminiService)
+├── store/              # Zustand store for state management
 ├── utils/              # Utility functions (exportUtils)
 ├── App.tsx             # Main application component
 ├── index.html          # Entry point, defines layout and import map

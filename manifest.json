@@ -1,0 +1,16 @@
+{
+  "short_name": "Markmap",
+  "name": "Markmap Web",
+  "description": "An interactive web application to visualize Markdown as a mind map, featuring real-time editing, SVG/HTML export, and AI-powered syntax correction using the Gemini API.",
+  "icons": [
+    {
+      "src": "/icon.svg",
+      "type": "image/svg+xml",
+      "sizes": "any"
+    }
+  ],
+  "start_url": ".",
+  "display": "standalone",
+  "theme_color": "#ffffff",
+  "background_color": "#ffffff"
+}

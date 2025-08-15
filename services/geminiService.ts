@@ -1,16 +1,11 @@
-
 import { GoogleGenAI } from "@google/genai";
 
-if (!process.env.API_KEY) {
-  console.warn("Gemini API key not found. AI features will be disabled. Please set the API_KEY environment variable.");
-}
-
-const ai = new GoogleGenAI({ apiKey: process.env.API_KEY });
-
-export async function fixMarkdownWithGemini(markdown: string): Promise<string> {
-  if (!process.env.API_KEY) {
-      throw new Error("API_KEY environment variable not set.");
+export async function fixMarkdownWithGemini(markdown: string, apiKey: string): Promise<string> {
+  if (!apiKey) {
+      throw new Error("Gemini API Key not provided. Please set it in the settings.");
   }
+  
+  const ai = new GoogleGenAI({ apiKey });
   
   const model = "gemini-2.5-flash";
   const prompt = `You are an expert at fixing Markdown syntax. The following text is a Markdown document that may contain syntax errors. Please analyze it, correct any issues you find, and return only the corrected Markdown content. Do not add any introductory text, explanations, or code block fences (like \`\`\`markdown) around the output. Just return the raw, corrected Markdown.
@@ -33,6 +28,6 @@ ${markdown}`;
 
   } catch (error) {
     console.error("Error calling Gemini API:", error);
-    throw new Error("Failed to get a response from the AI service.");
+    throw new Error("Failed to get a response from the AI service. Please check your API key and network connection.");
   }
 }

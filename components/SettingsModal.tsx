@@ -1,25 +1,25 @@
-
 import React, { useState } from 'react';
 import { IMarkmapJSONOptions } from '../types';
 import { XIcon } from './icons';
+import { useStore } from '../store/useStore';
 
 interface SettingsModalProps {
-  initialOptions: IMarkmapJSONOptions;
-  initialCss: string;
-  onSave: (options: IMarkmapJSONOptions, css: string) => void;
   onClose: () => void;
 }
 
-const SettingsModal: React.FC<SettingsModalProps> = ({ initialOptions, initialCss, onSave, onClose }) => {
-  const [optionsStr, setOptionsStr] = useState(JSON.stringify(initialOptions, null, 2));
-  const [css, setCss] = useState(initialCss);
+const SettingsModal: React.FC<SettingsModalProps> = ({ onClose }) => {
+  const { markmapOptions, customCss, apiKey, saveSettings } = useStore();
+
+  const [optionsStr, setOptionsStr] = useState(JSON.stringify(markmapOptions, null, 2));
+  const [css, setCss] = useState(customCss);
+  const [key, setKey] = useState(apiKey);
   const [error, setError] = useState('');
 
   const handleSave = () => {
     try {
       const parsedOptions = JSON.parse(optionsStr);
       setError('');
-      onSave(parsedOptions, css);
+      saveSettings(parsedOptions, css, key);
     } catch (e) {
       setError('Invalid JSON in options. Please correct it.');
     }
@@ -35,6 +35,22 @@ const SettingsModal: React.FC<SettingsModalProps> = ({ initialOptions, initialCs
           </button>
         </div>
         <div className="p-6 space-y-6 overflow-y-auto">
+          <div>
+            <label htmlFor="apiKey" className="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-2">
+              Gemini API Key
+            </label>
+            <input
+              id="apiKey"
+              type="password"
+              className="w-full p-2 border border-gray-300 dark:border-gray-600 rounded-md bg-gray-50 dark:bg-gray-700 font-mono text-sm"
+              value={key}
+              onChange={(e) => setKey(e.target.value)}
+              placeholder="Enter your Gemini API Key"
+            />
+            <p className="text-xs text-gray-500 dark:text-gray-400 mt-2">
+              Your API key is stored locally in your browser's local storage.
+            </p>
+          </div>
           <div>
             <label htmlFor="options" className="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-2">
               Markmap Options (JSON)
