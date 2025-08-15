@@ -1,7 +1,13 @@
 
 import { IMarkmapJSONOptions } from './types';
 
-export const INITIAL_MARKDOWN = `
+export const INITIAL_MARKDOWN = `---
+title: Markmap Sample
+markmap:
+  initialExpandLevel: 3
+  colorFreezeLevel: 3
+---
+
 # Markmap Sample
 
 ## Basic Usage
@@ -40,7 +46,8 @@ function hello() {
 \`\`\`
 
 ### Links
-[Official Website](https://markmap.js.org/)
+- [Official Website](https://markmap.js.org/)
+- ![SVG](https://developers.cloudflare.com/_astro/logo.DAG2yejx.svg)
 
 ## Pro Tip
 Use the "Fix with AI" button if your markdown looks broken!
