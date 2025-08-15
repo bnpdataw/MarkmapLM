@@ -1,4 +1,4 @@
-# Project Refactoring: Markmap Web App
+# Project Refactoring: MarkmapLM App
 
 This document tracks the progress of refactoring the Markmap VSCode extension into a standalone web application.
 

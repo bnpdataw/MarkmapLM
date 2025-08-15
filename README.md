@@ -1,10 +1,10 @@
-# Markmap Web
+# MarkmapLM
 
 An interactive web application to visualize Markdown as a mind map, featuring real-time editing, SVG/HTML export, and AI-powered syntax correction using the Google Gemini API.
 
 This project is a web-based refactor of the original [markmap-vscode](https://github.com/gera2ld/markmap-vscode) extension, bringing its powerful visualization capabilities to the browser.
 
-![Markmap Web Application Screenshot](https://storage.googleapis.com/agent-tools-public/screenshots/markmap-web/markmap-web-screenshot.png)
+![MarkmapLM Application Screenshot](https://storage.googleapis.com/agent-tools-public/screenshots/markmap-web/markmaplm-screenshot.png)
 
 ## ✨ Features
 

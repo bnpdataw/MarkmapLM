@@ -2,7 +2,7 @@
 import { IMarkmapJSONOptions } from './types';
 
 export const INITIAL_MARKDOWN = `
-# Markmap Web
+# Markmap Sample
 
 ## Basic Usage
 

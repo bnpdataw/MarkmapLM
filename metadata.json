@@ -1,5 +1,5 @@
 {
-  "name": "Markmap Web",
+  "name": "MarkmapLM",
   "description": "An interactive web application to visualize Markdown as a mind map, featuring real-time editing, SVG/HTML export, and AI-powered syntax correction using the Gemini API.",
   "requestFramePermissions": []
 }
